@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Discussion Forum</title>
+  <script>
+    function likePost(postId) {
+      var likeButton = document.getElementById(postId + "-like");
+      var likeCount = document.getElementById(postId + "-count");
+      var currentLikes = parseInt(likeCount.textContent);
+      
+      if (likeButton.classList.contains("liked")) {
+        likeButton.classList.remove("liked");
+        likeCount.textContent = currentLikes - 1;
+      } else {
+        likeButton.classList.add("liked");
+        likeCount.textContent = currentLikes + 1;
+      }
+    }
+  </script>
+  <style>
+    .liked {
+      color: red;
+    }
+  </style>
+  
+</head>
+  <h1>Welcome to the Parmveer's Discussion Forum!</h1>
+
+  
+  <form>
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button type="button" onclick="searchForum()">Search</button>
+  </form>
+  
+  <h2>Topic 1</h2>
+  <p>Post your thoughts and comments here:</p>
+  <form>
+    <textarea rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+  <div class="post">
+    <p>Post content...</p>
+    <button id="post1-like" onclick="likePost('post1')">Like</button>
+    <span id="post1-count">0</span>
+  </div>
+  
+  <h2>Topic 2</h2>
+  <p>Post your thoughts and comments here:</p>
+  <form>
+    <textarea rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+  <div class="post">
+    <p>Post content...</p>
+    <button id="post2-like" onclick="likePost('post2')">Like</button>
+    <span id="post2-count">0</span>
+  </div>
+
+  <h2>Topic 3</h2>
+  <p>Post your thoughts and comments here:</p>
+  <form>
+    <textarea rows="4" cols="50"></textarea><br>
+    <input type="submit" value="Submit">
+  </form>
+  <div class="post">
+    <p>Post content...</p>
+    <button id="post3-like" onclick="likePost('post3')">Like</button>
+    <span id="post3-count">0</span>
+  </div>
+
+  
+</body>
+</html>
+
+
